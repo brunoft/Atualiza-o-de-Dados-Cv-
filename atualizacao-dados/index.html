@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <title>Análise de Currículo</title>
@@ -18,8 +18,13 @@
           margin:0;
           font-family:'Roboto', sans-serif;
           min-height:100vh;
-
         }
+
+        .main-cv{
+          display: flex;
+          height: 100%;
+        }
+
         .main-cv-left{
           flex: auto;
           background-color:#00cc8d;
@@ -34,48 +39,43 @@
           display: flex;
           width: 100%;
           max-width: 1259px;
-        }
-        .main-cv{
-          display: flex;
+          min-height: 100vh;
         }
 
+        /*GREEN-LEFT*/
         .green-left{
           width: 50%;
-          height: 100vh;
           background-color:#00cc8d;
           display: flex;
           justify-content: center;
         }
 
         .img-background{
+          width: 100%;
+          align-items: center;
+          background-repeat:no-repeat;
+          background-position: top;
         }
 
         .img-person{
-          margin-left: 8%;
           position: absolute;
+          display: flex;
+          margin-right: -270px;
+          max-width: 40%;
           align-self: center;
-          max-width: 70%;
         }
 
-        .img-person img{
-
-
-        }
-
-        //WHITE-RIGHT
-
+        /*WHITE-RIGHT*/
         .white-right{
           display: flex;
           width: 70%;
-          height: 100vh;
           background-color: #fafafa;
         }
 
         .main-form-content{
           width: 64%;
-          height: 85%;
+          height: 74%;
           margin-left: 17%;
-
         }
 
         .info-update{
@@ -86,8 +86,16 @@
           color: #3f3f3f;
         }
 
+        .title h1 {
+          font-weight: 700;
+        }
+
         .sub-title{
           color: #bab9b9;
+        }
+
+        .sub-title h4 {
+          font-weight: 500;
         }
 
         .box-form{
@@ -101,8 +109,12 @@
           width: 48%;
           margin-top: 16px;
         }
+        
+        input[type='number'] {
+            -moz-appearance:textfield;
+        }
 
-        .form-control{
+         .form-control::placeholder{
           font-style: oblique;
         }
 
@@ -112,11 +124,9 @@
           margin-top: 8px
           margin-bottom: 0px;
         }
+
         .checkbox label{
           min-height: 0px;
-        }
-
-        .has-error .checkbox{
           color: black;
         }
 
@@ -127,17 +137,13 @@
         .checkbox input[type="checkbox"]{
           margin: 0px;
         }
+
         input[type="checkbox"]{
           margin: 0px;
         }
 
-        .form-control:focus{
-          border-color: #ccc9c9!important;
-          box-shadow: none !important;
-        }
-
         .btn-rescue{
-          color: white;
+          color: white !important;
           margin-top: 32px;
         }
 
@@ -146,7 +152,12 @@
           min-width: 48%;
           max-width: 48%;
           font-weight: 700;
-          white-space: normal;
+        }
+        .btn:hover{
+          color: white;
+        }
+        .btn:focus{
+          color: white;
         }
 
         /*MEDIAS*/
@@ -157,9 +168,19 @@
           .main-cv-left{
             display: none;
           }
+
           .green-left{
             display: none;
           }
+
+          .white-right{
+            width: 100%;
+          }
+
+          .main-cv-right{
+            display: none;
+          }
+
           .title{
             text-align: center;
           }
@@ -167,12 +188,13 @@
           .sub-title{
             text-align: center;
           }
+
           .main-form-content{
             width: 100%;
             margin-left: 0px;
             padding: 8px;
-
           }
+
           .info-form{
             min-width: 100%;
           }
@@ -181,7 +203,6 @@
           .btn-rescue{
             display: flex;
             justify-content: center;
-
           }
 
           .btn{
@@ -199,6 +220,14 @@
             display: none;
           }
 
+          .main-cv-right{
+            display: none;
+          }
+
+          .white-right{
+              width: 100%;
+          }
+
           .title{
             text-align: center;
           }
@@ -206,19 +235,17 @@
           .sub-title{
             text-align: center;
           }
+
           .box-form{
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: none;
           }
+
           .main-form-content{
             width: 100%;
             margin-left: 0px;
             padding: 8px;
-
-          }
-          .info-form{
-
           }
 
           .btn-rescue{
@@ -228,18 +255,20 @@
           }
         }
 
+        /*960 and 1259*/
           @media screen  and (min-width: 960px) and (max-width: 1259px){
-            .green-left{
-              max-height: 100vh;
-
+            .img-person{
+              max-width: 40%;
+              margin-right: -200px
             }
-            .white-right{
-              max-height: 100vh;
+
+            .info-form h4{
+              font-size: 1.2em;
             }
 
           }
 
-        /*960 and 1259*/
+
         /*1260 and 1599*/
         /*1600*/
 
@@ -250,9 +279,9 @@
       <div class="main-cv-left"></div>
       <div class="main-cv-content">
         <div class="green-left">
-          <div class="img-background"style="background-image: url(../desk-opacity.png); background-repeat:no-repeat;align-items: center; width: 386px; height: 362px; postion: relative"></div>
+          <div class="img-background"style="background-image: url(../desk-opacity.png);"></div>
             <div class="img-person">
-              <img src="../person-vector.png" alt="" style="min-width:485px; min-height: 628px;">
+              <img src="../person-vector.png" alt="">
             </div>
         </div>
         <div class="white-right">
@@ -266,7 +295,8 @@
           <div class="box-form">
             <div class="info-form form-group has-error ">
               <h4>Celular</h4>
-                <input type="text" class="form-control" name="" value="" placeholder="(XX)XXXXX-XXXX">
+                <input type="number" id="atualizadados-celular"  class="form-control" placeholder="(XX)XXXXX-XXXX">
+                <small class="form-text">Validação</small>
               <div class="checkbox">
                 <input type="checkbox" value=""><label>Possuo WhatsApp® nesse número</label>
               </div>
@@ -289,7 +319,7 @@
             </div>
           </div>
           <div class="btn-rescue">
-            <button class="btn" type="button" name="button">RESGATAR VIP GRÁTIS</button>
+            <button class="btn" type="submit" name="button">RESGATAR VIP GRÁTIS</button>
           </div>
         </div>
       </div>
